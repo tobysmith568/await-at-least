@@ -1,0 +1,62 @@
+{
+  "name": "await-at-least",
+  "version": "0.0.0",
+  "description": "A small set of functions to await at least a certain amount of time before resolving a promise.",
+  "license": "ISC",
+  "packageManager": "pnpm@9.12.2+sha256.2ef6e547b0b07d841d605240dce4d635677831148cd30f6d564b8f4f928f73d2",
+  "prettier": "@tobysmith568/prettier-config",
+  "type": "module",
+  "keywords": [
+    "await",
+    "at",
+    "least",
+    "time",
+    "delay",
+    "promise",
+    "wait",
+    "timeout"
+  ],
+  "author": {
+    "name": "Toby Smith",
+    "email": "contact@tobythe.dev",
+    "url": "https://tobysmith.uk"
+  },
+  "homepage": "https://github.com/tobysmith568/await-at-least",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tobysmith568/await-at-least.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tobysmith568/await-at-least/issues"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "test": "vitest"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@license-cop/permissive": "^1.6.2",
+    "@rollup/plugin-commonjs": "^28.0.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@tobysmith568/prettier-config": "^2.1.1",
+    "license-cop": "^1.6.2",
+    "rollup": "^4.21.1",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  }
+}
