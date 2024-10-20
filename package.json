@@ -45,8 +45,7 @@
     "build": "rollup -c",
     "test": "vitest"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@license-cop/permissive": "^1.6.2",
     "@rollup/plugin-commonjs": "^28.0.0",

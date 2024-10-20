@@ -29,7 +29,10 @@ const postToServer = async (url: string, body: unknown) => {
   // ...
 };
 
-const responseFromServer = await awaitAtLeast(800, postToServer("https://api.example.com", requestBody));
+const responseFromServer = await awaitAtLeast(
+  800,
+  postToServer("https://api.example.com", requestBody)
+);
 ```
 
 If the given promise resolves before the given amount of time is up, the returned promise will wait for the remaining time before returning the result.
@@ -47,7 +50,10 @@ const postToServer = async (url: string, body: unknown) => {
   // ...
 };
 
-const responseFromServer = await awaitAtLeastOrReject(800, postToServer("https://api.example.com", requestBody));
+const responseFromServer = await awaitAtLeastOrReject(
+  800,
+  postToServer("https://api.example.com", requestBody)
+);
 ```
 
 If the given promise resolves before the given amount of time is up, the returned promise will wait for the remaining time before returning the result.
