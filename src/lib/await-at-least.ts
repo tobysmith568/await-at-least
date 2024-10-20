@@ -1,16 +1,16 @@
 ﻿import { wait } from "./wait";
 
 /**
- * Makes sure that the given promise takes at least the given amount of time to resolve or reject.
+ * Wraps the given promise and makes sure it takes at least the given duration before it resolves or rejects.
  *
  * This function is useful for creating consistent user experiences, such as showing loading indicators
  * for a minimum duration to avoid UI flashes.
  *
- * If the promise resolves before the given amount of time is up, the function will wait for the remaining
- * time before returning the result.
+ * If the given promise resolves before the given amount of time is up, the returned promise will wait
+ * for the remaining time before returning the result.
  *
- * If the promise rejects before the given amount of time is up, the function will wait for the remaining
- * time before rethrowing the error.
+ * If the given promise rejects before the given amount of time is up, the returned promise will wait
+ * for the remaining time before rethrowing the error.
  *
  * @param ms The minimum amount of time the promise should take to resolve or reject in milliseconds.
  * @param promise The promise to await.
