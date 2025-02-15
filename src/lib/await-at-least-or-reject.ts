@@ -30,10 +30,6 @@
 export const awaitAtLeastOrReject = async <T>(ms: number, promise: Promise<T>): Promise<T> => {
   const atLeastPromise = wait(ms);
 
-  try {
-    const [result] = await Promise.all([promise, atLeastPromise]);
-    return result;
-  } catch (error) {
-    throw error;
-  }
+  const [result] = await Promise.all([promise, atLeastPromise]);
+  return result;
 };
