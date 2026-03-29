@@ -33,8 +33,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0(rollup@4.59.0)
       rollup-plugin-typescript2:
-        specifier: ^0.36.0
-        version: 0.36.0(rollup@4.59.0)(typescript@5.7.3)
+        specifier: ^0.37.0
+        version: 0.37.0(rollup@4.59.0)(typescript@5.7.3)
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
@@ -2603,8 +2603,8 @@ packages:
     peerDependencies:
       rollup: '*'
 
-  rollup-plugin-typescript2@0.36.0:
-    resolution: {integrity: sha512-NB2CSQDxSe9+Oe2ahZbf+B4bh7pHwjV5L+RSYpCu7Q5ROuN94F9b6ioWwKfz3ueL3KTtmX4o2MUH2cgHDIEUsw==}
+  rollup-plugin-typescript2@0.37.0:
+    resolution: {integrity: sha512-S1r/4Ufi13Yg/chPlh4iSHWq2Zs/sIAodW5SKUoCQfy/DEQhkS2XRFEtv+NRq3iBO4WHHfqKtDPOC5lJTYm7OQ==}
     peerDependencies:
       rollup: '>=1.26.3'
       typescript: '>=2.4.0'
@@ -6006,7 +6006,7 @@ snapshots:
 
   read-yaml-file@2.1.0:
     dependencies:
-      js-yaml: 4.1.0
+      js-yaml: 4.1.1
       strip-bom: 4.0.0
 
   readable-stream@3.6.2:
@@ -6068,7 +6068,7 @@ snapshots:
       del: 8.0.0
       rollup: 4.59.0
 
-  rollup-plugin-typescript2@0.36.0(rollup@4.59.0)(typescript@5.7.3):
+  rollup-plugin-typescript2@0.37.0(rollup@4.59.0)(typescript@5.7.3):
     dependencies:
       '@rollup/pluginutils': 4.2.1
       find-cache-dir: 3.3.2
@@ -6677,7 +6677,7 @@ snapshots:
 
   write-yaml-file@5.0.0:
     dependencies:
-      js-yaml: 4.1.0
+      js-yaml: 4.1.1
       write-file-atomic: 5.0.1
 
   yallist@4.0.0: {}
