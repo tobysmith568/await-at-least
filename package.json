@@ -46,7 +46,7 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@license-cop/permissive": "^1.8.0",
+    "@license-cop/permissive": "^2.0.0",
     "@rollup/plugin-commonjs": "^29.0.0",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@tobysmith568/eslint-config": "^2.3.0",
