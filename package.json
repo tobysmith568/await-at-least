@@ -49,13 +49,20 @@
     "@license-cop/permissive": "^2.2.1",
     "@rollup/plugin-commonjs": "^29.0.0",
     "@rollup/plugin-node-resolve": "^16.0.0",
-    "@tobysmith568/eslint-config": "^2.3.0",
+    "@tobysmith568/eslint-config": "^2.7.1",
     "@tobysmith568/prettier-config": "^2.2.1",
     "license-cop": "^2.2.1",
     "rollup": "^4.34.7",
     "rollup-plugin-delete": "^3.0.0",
     "rollup-plugin-typescript2": "^0.37.0",
-    "typescript": "^5.7.3",
+    "typescript": "^6.0.0",
     "vitest": "^4.0.0"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "@tobysmith568/prettier-config>typescript": "6"
+      }
+    }
   }
 }
