@@ -1,13 +1,14 @@
-﻿import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+﻿import { afterEach, beforeEach, describe, expect, it, jest } from "bun:test";
+import { advanceTimersByTimeAsync } from "./test-utils";
 import { wait } from "./wait";
 
 describe("wait", () => {
   beforeEach(() => {
-    vi.useFakeTimers();
+    jest.useFakeTimers();
   });
 
   afterEach(() => {
-    vi.useRealTimers();
+    jest.useRealTimers();
   });
 
   it("should wait the given duration before resolving", async () => {
@@ -15,9 +16,9 @@ describe("wait", () => {
     wait(500).then(() => (hasResolved = true));
 
     expect(hasResolved).toBe(false);
-    await vi.advanceTimersByTimeAsync(499);
+    await advanceTimersByTimeAsync(499);
     expect(hasResolved).toBe(false);
-    await vi.advanceTimersByTimeAsync(1);
+    await advanceTimersByTimeAsync(1);
     expect(hasResolved).toBe(true);
   });
 });
