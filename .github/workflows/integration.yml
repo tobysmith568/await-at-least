@@ -103,7 +103,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Unit Test
-        run: bun run vitest run
+        run: bun test
 
   licenses:
     name: Check Licenses

@@ -1,13 +1,14 @@
-﻿import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+﻿import { afterEach, beforeEach, describe, expect, it, jest } from "bun:test";
 import { awaitAtLeast } from "./await-at-least";
+import { advanceTimersByTimeAsync } from "./test-utils";
 
 describe("awaitAtLeast", () => {
   beforeEach(() => {
-    vi.useFakeTimers();
+    jest.useFakeTimers();
   });
 
   afterEach(() => {
-    vi.useRealTimers();
+    jest.useRealTimers();
   });
 
   describe("when the given promise has already resolved", () => {
@@ -18,9 +19,9 @@ describe("awaitAtLeast", () => {
       awaitAtLeast(500, resolvedPromise).then(() => (hasResolved = true));
 
       expect(hasResolved).toBe(false);
-      await vi.advanceTimersByTimeAsync(499);
+      await advanceTimersByTimeAsync(499);
       expect(hasResolved).toBe(false);
-      await vi.advanceTimersByTimeAsync(1);
+      await advanceTimersByTimeAsync(1);
       expect(hasResolved).toBe(true);
     });
 
@@ -28,7 +29,7 @@ describe("awaitAtLeast", () => {
       const resolvedPromise = Promise.resolve("resolved");
 
       const resultPromise = awaitAtLeast(500, resolvedPromise);
-      await vi.advanceTimersByTimeAsync(500);
+      await advanceTimersByTimeAsync(500);
 
       const result = await resultPromise;
       expect(result).toBe("resolved");
@@ -43,9 +44,9 @@ describe("awaitAtLeast", () => {
       awaitAtLeast(500, rejectedPromise).catch(() => (hasRejected = true));
 
       expect(hasRejected).toBe(false);
-      await vi.advanceTimersByTimeAsync(499);
+      await advanceTimersByTimeAsync(499);
       expect(hasRejected).toBe(false);
-      await vi.advanceTimersByTimeAsync(1);
+      await advanceTimersByTimeAsync(1);
       expect(hasRejected).toBe(true);
     });
 
@@ -57,7 +58,7 @@ describe("awaitAtLeast", () => {
       let error: unknown;
       awaitAtLeast(500, resultPromise).catch(e => (error = e));
 
-      await vi.advanceTimersByTimeAsync(500);
+      await advanceTimersByTimeAsync(500);
 
       expect(error).toBeInstanceOf(Error);
       expect((error as Error).message).toBe("rejected");
@@ -77,9 +78,9 @@ describe("awaitAtLeast", () => {
       awaitAtLeast(awaitDuration, resolvedPromise).then(() => (hasResolved = true));
 
       expect(hasResolved).toBe(false);
-      await vi.advanceTimersByTimeAsync(499);
+      await advanceTimersByTimeAsync(499);
       expect(hasResolved).toBe(false);
-      await vi.advanceTimersByTimeAsync(1);
+      await advanceTimersByTimeAsync(1);
       expect(hasResolved).toBe(true);
     });
 
@@ -92,7 +93,7 @@ describe("awaitAtLeast", () => {
       );
 
       const resultPromise = awaitAtLeast(awaitDuration, resolvedPromise);
-      await vi.advanceTimersByTimeAsync(500);
+      await advanceTimersByTimeAsync(500);
 
       const result = await resultPromise;
       expect(result).toBe("resolved");
@@ -112,9 +113,9 @@ describe("awaitAtLeast", () => {
       awaitAtLeast(awaitDuration, rejectedPromise).catch(() => (hasRejected = true));
 
       expect(hasRejected).toBe(false);
-      await vi.advanceTimersByTimeAsync(499);
+      await advanceTimersByTimeAsync(499);
       expect(hasRejected).toBe(false);
-      await vi.advanceTimersByTimeAsync(1);
+      await advanceTimersByTimeAsync(1);
       expect(hasRejected).toBe(true);
     });
 
@@ -131,7 +132,7 @@ describe("awaitAtLeast", () => {
       let error: unknown;
       awaitAtLeast(awaitDuration, resultPromise).catch(e => (error = e));
 
-      await vi.advanceTimersByTimeAsync(500);
+      await advanceTimersByTimeAsync(500);
 
       expect(error).toBeInstanceOf(Error);
       expect((error as Error).message).toBe("rejected");

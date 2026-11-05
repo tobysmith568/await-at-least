@@ -49,16 +49,16 @@
   ],
   "scripts": {
     "build": "tsdown",
-    "test": "vitest"
+    "test": "bun test"
   },
   "devDependencies": {
     "@license-cop/permissive": "^2.2.1",
     "@tobysmith568/eslint-config": "^3.2.0",
     "@tobysmith568/prettier-config": "^2.2.1",
+    "@types/bun": "^1.4.4",
     "eslint": "^10.14.0",
     "license-cop": "^2.2.1",
     "tsdown": "^0.23.5",
-    "typescript": "^6.0.0",
-    "vitest": "^5.0.0"
+    "typescript": "^6.0.0"
   }
 }
