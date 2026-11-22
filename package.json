@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "A small set of functions to await at least a certain amount of time before resolving a promise.",
   "license": "ISC",
-  "packageManager": "bun@1.4.4",
+  "packageManager": "bun@1.4.5",
   "prettier": "@tobysmith568/prettier-config",
   "type": "module",
   "keywords": [
